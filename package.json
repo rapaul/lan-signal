@@ -1,0 +1,33 @@
+{
+  "name": "lan-signal",
+  "version": "1.0.0",
+  "description": "Reusable WebRTC signaling for browser LAN multiplayer: rooms per app, listed only to players on the same network, with optional passphrases. AWS (API Gateway WebSocket + Lambda + DynamoDB) or a local Node server.",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./client": "./client/index.ts",
+    "./local": "./server/local.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "node server/local.ts",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.1149.0",
+    "@aws-sdk/client-dynamodb": "^3.1149.0",
+    "@aws-sdk/lib-dynamodb": "^3.1149.0",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "aws-cdk": "^2.1145.0",
+    "aws-cdk-lib": "^2.273.0",
+    "constructs": "^10.8.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3",
+    "ws": "^8.22.0"
+  }
+}
